@@ -196,7 +196,7 @@ async function searchByAgreementNo() {
     const data = await response.json();
     resultContainer.style.display = 'block';
     resultDiv.innerHTML = `
-      <p><strong>Status:</strong> ${data.Status}</p>
+      <p><b><font color="red"><strong>Status:</strong> ${data.Status}</font></b></p>
       <p><strong>Loan No:</strong> ${data['Loan No']}</p>
       <p><strong>Branch:</strong> ${data.Branch}</p>
       <p><strong>Name:</strong> ${data.Name}</p>
