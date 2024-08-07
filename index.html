@@ -168,9 +168,11 @@
   </div>
 
   <script>
+    let serverUrl = 'noc-backend-b6ddeyeabaetgtfa.southindia-01.azurewebsites.net';
+
 async function searchByAgreementNo() {
   const agreementNo = document.getElementById('search-input').value;
-  const response = await fetch('http://localhost:3000/api/get-info2', {
+  const response = await fetch(`${serverUrl}/api/get-info2`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -253,7 +255,7 @@ async function searchByAgreementNo() {
       }
 
       // Send data to backend
-      const response = await fetch('http://localhost:3000/api/apply-noc2', {
+      const response = await fetch(`${serverUrl}/api/apply-noc2`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -280,7 +282,7 @@ async function searchByAgreementNo() {
     }
     function downloadFile(fileId) {
   // Construct the file download URL using the file ID
-  const downloadUrl = `http://localhost:3000/api/downloadFile2/${fileId}`;
+  const downloadUrl = `${serverUrl}/api/downloadFile2/${fileId}`;
 
   // Redirect to the download URL
   window.location.href = downloadUrl;
